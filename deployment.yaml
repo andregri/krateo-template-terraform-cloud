@@ -50,7 +50,7 @@ spec:
     terraformOrganization: <% terraformOrganization %>
     fromRepo:
       schema: https
-      organizationName: krateoplatformops
+      organizationName: <% organizationName %>
       repositoryName: krateo-template-terraform-cloud
     toRepo:
       schema: https
