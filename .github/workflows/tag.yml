@@ -12,6 +12,7 @@ on:
 
 jobs:
   create-tag:
+    permissions: write-all
     runs-on: ubuntu-18.04
 
     steps:
