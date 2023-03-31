@@ -1,0 +1,44 @@
+apiVersion: krateo.io/v1alpha1
+kind: Template
+metadata:
+  name: krateo-terraform-workspace
+spec:
+  owner: andrea.grillo@kiratech.it
+  title: Krateo Terraform Workspace
+  description: Krateo Template for managing Workspace on Terraform Cloud
+  icon: fa-solid fa-fire
+  tags:
+    - terraform
+    - template
+    - krateo
+    - cloud
+    - workspace
+  widgets:
+    - title: Name and description
+      description: Name your app
+      properties:
+        - title: Name
+          key: name
+          description: Unique name of the component
+          required: true
+          default: learn-terraform-cloud
+    - title: Terraform Cloud
+      description: Terraform Cloud
+      properties:
+        - title: Organization
+          key: tfOrganization
+          description: Terraform Cloud Organization
+          required: true
+          default: andregri
+    - title: Git repository destination
+      properties:
+        - title: Organization Name
+          key: organizationName
+          description: Organization name
+          required: true
+          default: andregri
+        - title: Endpoint
+          key: destinationEndpoint
+          description: github.com / gitlab.com / bitbucket.org
+          required: true
+          type: endpoint
