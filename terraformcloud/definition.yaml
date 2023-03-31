@@ -65,11 +65,9 @@ spec:
                   properties:
                     namespace:
                       type: string
-                    replicas:
-                      type: integer
-                    host:
-                      type: string
                     endpointName:
+                      type: string
+                    terraformOrganization:
                       type: string
                     organizationName:
                       type: string
@@ -102,9 +100,7 @@ spec:
                   properties:
                     name:
                       type: string
-                    replicas:
-                      type: integer
-                    host:
+                    terraformOrganization:
                       type: string
                     organizationName:
                       type: string

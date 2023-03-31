@@ -159,10 +159,11 @@ spec:
         - type: CombineFromComposite
           combine:
             variables:
-              - fromFieldPath: "spec.values.replicas"
+              # - fromFieldPath: "spec.values.replicas"
               # - fromFieldPath: "spec.values.organizationName"
               # - fromFieldPath: "spec.values.repositoryName"
-              - fromFieldPath: "spec.values.host"
+              # - fromFieldPath: "spec.values.host"
+              - fromFieldPath: "spec.values.terraformOrganization"
               # - fromFieldPath: "spec.values.description"
               # - fromFieldPath: "spec.values.endpointName"
               # - fromFieldPath: "spec.values.namespace"
@@ -175,8 +176,7 @@ spec:
               - fromFieldPath: "spec.values.endpointName"
             strategy: string
             string:
-              fmt: '{ "replicas": %d,
-                "host": "%s",
+              fmt: '{ "terraformOrganization": %s,
                 "organizationName": "%s",
                 "repositoryName": "%s",
                 "schema": "%s",
