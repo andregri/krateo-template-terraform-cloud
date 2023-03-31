@@ -1,9 +1,9 @@
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: krateo-template-fireworksapp
+  name: krateo-template-terraform-cloud
 spec:
-  package: "ghcr.io/krateoplatformops/krateo-template-fireworksapp:latest"
+  package: "ghcr.io/andregri/krateo-template-terraform-cloud:latest"
   packagePullPolicy: Always
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1

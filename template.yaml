@@ -25,8 +25,8 @@ spec:
     - title: Terraform Cloud
       description: Terraform Cloud
       properties:
-        - title: Organization
-          key: tfOrganization
+        - title: Terraform Cloud Organization
+          key: terraformOrganization
           description: Terraform Cloud Organization
           required: true
           default: andregri

@@ -1,32 +1,32 @@
 # {{=<% %>=}}
 ---
 apiVersion: deployment.krateo.io/v1alpha1
-kind: FireworksApp
+kind: TerraformCloud
 metadata:
-  name: <%#norm%>{{name}}<%/norm%>-fireworksapp
+  name: <%#norm%>{{name}}<%/norm%>-terraform-cloud
 spec:
-  owner: mauro
+  owner: Andrea Grillo
   title: <% name %>
-  description: Fireworks App Deployment
+  description: Terraform Cloud App Deployment
   icon: "fa-solid fa-fire"
   tags:
-    - fireworks
+    - terraform
     - template
     - krateo
-    - katy perry
+    - cloud
   links:
-    - url: https://github.com/<% organizationName %>/<% owner %>-fire-<%#norm%>{{name}}<%/norm%>
-      title: <% organizationName %>/<% owner %>-fire-<%#norm%>{{name}}<%/norm%>
+    - url: https://github.com/<% organizationName %>/<% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>
+      title: <% organizationName %>/<% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>
       icon: "fa-brands fa-git"
   plugins:
     - name: resources
-      value: <%#norm%>{{name}}<%/norm%>-fireworksapp
+      value: <%#norm%>{{name}}<%/norm%>-terraform-cloud
       type: argocd
       icon: fa-solid fa-diagram-project
       endpointName: argocd
     - name: documentation
       values:
-        - "[<% organizationName %>][<% owner %>-fire-<%#norm%>{{name}}<%/norm%>]README.md"
+        - "[<% organizationName %>][<% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>]README.md"
       type: doc
       icon: fa-solid fa-book
       endpointName: <% destinationEndpoint.friendlyName %>
@@ -36,33 +36,31 @@ spec:
       icon: fa-brands fa-docker
     - name: pipelines
       values:
-        - "[<% organizationName %>][<% owner %>-fire-<%#norm%>{{name}}<%/norm%>]Build Docker image for every commit"
+        - "[<% organizationName %>][<% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>]Build Docker image for every commit"
       type: pipeline
       icon: fa-solid fa-person-running
       endpointName: <% destinationEndpoint.friendlyName %>
   values:
-    replicas: <% replicas %>
     organizationName: <% organizationName %>
-    repositoryName: <% owner %>-fire-<%#norm%>{{name}}<%/norm%>
+    repositoryName: <% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>
     destinationApiUrl: <% destinationEndpoint.target %>
     host: <% host %>
-    description: Cause baby, you're a firework. Come on, show 'em what you're worth
+    description: Infrastructure as Code Everywhere
     endpointName: <% destinationEndpoint.friendlyName %>
     namespace: krateo-system
     fromRepo:
       schema: https
       organizationName: krateoplatformops
-      repositoryName: krateo-template-fireworksapp
+      repositoryName: krateo-template-terraform-cloud
     toRepo:
       schema: https
       organizationName: <% organizationName %>
-      repositoryName: <% owner %>-fire-<%#norm%>{{name}}<%/norm%>
+      repositoryName: <% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>
       apiUrl: https://api.github.com
   # for editing purposes
-  templateName: krateo-fireworks
+  templateName: krateo-terraformcloud
   flat:
     name: <% name %>
-    replicas: <% replicas %>
-    host: <% host %>
+    terraformOrganization: <% terraformOrganization %>
     organizationName: <% organizationName %>
     destinationEndpoint: <% destinationEndpoint.friendlyName %>
