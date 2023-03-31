@@ -21,7 +21,7 @@ spec:
           key: name
           description: Unique name of the component
           required: true
-          default: learn-terraform-cloud
+          default: hello
     - title: Terraform Cloud
       description: Terraform Cloud
       properties:

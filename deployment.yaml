@@ -44,10 +44,10 @@ spec:
     organizationName: <% organizationName %>
     repositoryName: <% owner %>-terraform-cloud-<%#norm%>{{name}}<%/norm%>
     destinationApiUrl: <% destinationEndpoint.target %>
-    host: <% host %>
     description: Infrastructure as Code Everywhere
     endpointName: <% destinationEndpoint.friendlyName %>
     namespace: krateo-system
+    terraformOrganization: <% terraformOrganization %>
     fromRepo:
       schema: https
       organizationName: krateoplatformops
