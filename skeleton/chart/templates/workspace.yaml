@@ -1,0 +1,16 @@
+apiVersion: terraform.krateo.io/v1alpha1
+kind: Workspace
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  forProvider:
+    # See https://www.terraform.io/language/modules/sources#generic-git-repository
+    # and https://www.terraform.io/language/modules/sources#modules-in-package-sub-directories
+    source: Remote
+    module: git::https://github.com/{{ .Values.organization }}/{{ .Values.name }}?ref=main
+    cloud: true
+  # All Terraform outputs are written to the connection secret.
+  writeConnectionSecretToRef:
+    namespace: krateo-system
+    name: terraform-workspace-example-remote

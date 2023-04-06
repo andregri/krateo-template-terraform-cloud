@@ -1,0 +1,5 @@
+# {{=<% %>=}}
+---
+namespace: <% repositoryName %>-ns
+name: <% repositoryName %>
+organization: <% organizationName %>
