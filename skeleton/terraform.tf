@@ -4,7 +4,7 @@ terraform {
     organization = "andregri"
 
     workspaces {
-      name = "learn-terraform-cloud"
+      name = {{ repositoryName }}
     }
   }
   
