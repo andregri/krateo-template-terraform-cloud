@@ -1,10 +1,12 @@
+# {{=<% %>=}}
+
 terraform {
 
   cloud {
     organization = "andregri"
 
     workspaces {
-      name = {{ repositoryName }}
+      name = <% repositoryName %>
     }
   }
   
