@@ -293,20 +293,3 @@ spec:
             - type: string
               string:
                 fmt: "%s-provider-github-pc"
-    - base:
-        apiVersion: terraform.krateo.io/v1alpha1
-        kind: Workspace
-        metadata:
-          name: learn-terraform-cloud
-          namespace: krateo-system
-        spec:
-          forProvider:
-            # See https://www.terraform.io/language/modules/sources#generic-git-repository
-            # and https://www.terraform.io/language/modules/sources#modules-in-package-sub-directories
-            source: Remote
-            module: git::https://github.com/andregri/terraform-cloud-example?ref=main
-            cloud: true
-          # All Terraform outputs are written to the connection secret.
-          writeConnectionSecretToRef:
-            namespace: krateo-system
-            name: terraform-workspace-example-remote
